@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gitpulse"
+version = "0.1.0"
+description = "Analyze GitHub user activity from the command line."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "gitpulse" }]
+keywords = ["github", "cli", "activity", "streak"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+    "Environment :: Console",
+]
+dependencies = [
+    "httpx>=0.24",
+    "rich>=13.0",
+    "typer>=0.9",
+]
+
+[project.scripts]
+gitpulse = "gitpulse.cli:app"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["gitpulse*"]
